@@ -2,7 +2,7 @@
 
 Feito com [Godot](https://godotengine.org/) 
 
-Disponivel para jogar [Aqui!](https://jopestpe.github.io/Astromat/)
+Disponivel para [jogar!](https://jopestpe.github.io/Astromat/)
 
 ![](img.png)
 
