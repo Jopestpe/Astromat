@@ -1,19 +1,14 @@
 # Astromat 
 
-* estilo asteroids + tuxmath 
+* Asteroids
+* Tuxmath 
 
 ## Padrões em ícones 
 
-* 	▶️ 	Jogar 
-
-* 	ℹ️  Info 
-
-* 	⚙️  Configurações 
-
-* 	❔	Tutorial 
-
-* 	🌐  Idioma 
-
-* 	🔁 	Jogar Novamente 
-
-* 	↩️ 	Voltar 
+* Jogar ▶️
+* Info ℹ️  
+* Configurações ⚙️
+* Tutorial ❔
+* Idioma 🌐
+* Jogar Novamente 🔁 
+* Voltar ↩️
