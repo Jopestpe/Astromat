@@ -5,6 +5,8 @@ var ca = 0.5
 var tela
 var cena
 var vida 
+var control
+var dan=true
 func _ready():
 	tela = get_viewport_rect().size
 	position = tela / 2
@@ -19,8 +21,7 @@ func _process(_delta):
 		tiroi.apply_impulse(Vector2(),Vector2(1000,0).rotated(rotation)) 
 		get_tree().get_root().add_child(tiroi)
 		tt = false
-		yield(get_tree().create_timer(0.5),"timeout")
-		tt = true
+		$ttiro.start()
 	if position.x > tela.x:
 			position.x = 0
 	if position.x < 0:
@@ -44,14 +45,24 @@ func _physics_process(_delta):
 	vida = cena.vi()
 	if vida == 0:
 		queue_free()
-		get_tree().change_scene("res://cenas/Menu.tscn")
+		cena.vempo01()
 func dano():
+	$AudioStreamPlayer2D2.play()
 	vida = cena.vi()
 	vida-=1
 	cena.vida()
-	$AnimatedSprite.play('dano')
-	yield(get_tree().create_timer(3),"timeout")
-	$AnimatedSprite.play('norm')
+	if dan:
+		$danotimer.start()
+		$AnimatedSprite.play('dano')
 func destroir():
 	pass
-	
+func nome():
+	var nome='nave'
+	return nome
+func _on_ttiro_timeout():
+	tt = true
+func _on_danotimer_timeout():
+	$AnimatedSprite.play('norm')
+
+
+

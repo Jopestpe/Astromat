@@ -5,33 +5,43 @@ var res
 func _ready():
 	cena = get_tree().get_current_scene()
 	mn()
-	$Label2.text = str(meunum)
+	$Label.text = str(meunum)
 func _process(delta):
-	$AnimatedSprite2.rotation += 1 * delta
+	$AnimatedSprite.rotation += 1 * delta
+	position.y += 50 * delta
 func mn():
-	var al = randi()%3+1
+	res = cena.res()
+	var al = randi()%5+1
 	if al == 1:
 		meunum = res
 	else:
-		meunum = randi()%21+1
+		meunum = randi()%101+1
 func dano():
-	get_node("Area2D2/CollisionShape2D").disabled= true
-	$AudioStreamPlayer2D2.play()
-	$AnimatedSprite2.play('destroi')
-	get_node("AnimatedSprite2").play("destroi")
-	yield(get_tree().create_timer(0.5),"timeout")
+	res = cena.res()
+	if res == meunum:
+		$AudioStreamPlayer2D.play()
+		$AnimatedSprite.play('destroi')
+		$Timer.start()
+	else:
+		cena.er()
+		cena.vida()
+		cena.conta()
+func _on_Area2D_body_entered(body):
+	var ti = body.nome()
+	if ti == 'tiro'or'nave':
+		body.dano()
+	else:
+		pass
+func _on_VisibilityNotifier2D_screen_exited():
 	queue_free()
+func nome():
+	var nome='aste'
+	return nome
+func _on_Timer_timeout():
+	prox()
+	qfr()
+func prox():
 	cena.pontuar()
 	cena.conta()
-func destroir():
-	get_node("Area2D/CollisionShape2D").disabled= true
-	$AudioStreamPlayer2D.play()
-	$AnimatedSprite.play('destroi')
-	get_node("AnimatedSprite").play("destroi")
-	yield(get_tree().create_timer(0.5),"timeout")
+func qfr():
 	queue_free()
-func _on_VisibilityNotifier2D2_screen_exited():
-	queue_free()
-func _on_Area2D2_body_entered(body):
-	body.dano()
-	body.destroir()

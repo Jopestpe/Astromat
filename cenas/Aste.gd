@@ -8,26 +8,40 @@ func _ready():
 	$Label.text = str(meunum)
 func _process(delta):
 	$AnimatedSprite.rotation += 1 * delta
+	position.x += 150 * delta
 func mn():
-	var al = randi()%3+1
+	res = cena.res()
+	var al = randi()%5+1
 	if al == 1:
 		meunum = res
 	else:
-		meunum = randi()%21+1
+		meunum = randi()%101+1
 func dano():
-	cena.er()
-	cena.vida()
-	cena.conta()
-func destroir():
-	get_node("Area2D/CollisionShape2D").disabled= true
-	$AudioStreamPlayer2D.play()
-	$AnimatedSprite.play('destroi')
-	get_node("AnimatedSprite").play("destroi")
-	yield(get_tree().create_timer(0.5),"timeout")
-	queue_free()
+	res = cena.res()
+	if res == meunum:
+		$AudioStreamPlayer2D.play()
+		$AnimatedSprite.play('destroi')
+		$Timer.start()
+	else:
+		cena.er()
+		cena.vida()
+		cena.conta()
 func _on_Area2D_body_entered(body):
-	print('entroo')
-	body.dano()
-	body.destroir()
+	var ti = body.nome()
+	if ti == 'tiro'or'nave':
+		body.dano()
+	else:
+		pass
 func _on_VisibilityNotifier2D_screen_exited():
+	queue_free()
+func nome():
+	var nome='aste'
+	return nome
+func _on_Timer_timeout():
+	prox()
+	qfr()
+func prox():
+	cena.pontuar()
+	cena.conta()
+func qfr():
 	queue_free()

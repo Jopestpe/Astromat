@@ -14,7 +14,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Astemat"
+config/name="Astromat"
 config/description="Astromat em Dev
 Criado por Jopestpe"
 run/main_scene="res://cenas/Menu.tscn"
@@ -22,7 +22,6 @@ config/icon="res://img/nav.png"
 
 [display]
 
-window/size/resizable=false
 mouse_cursor/custom_image="res://img/Mira.png"
 window/stretch/mode="2d"
 

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://img/retn.png" type="Texture" id=1]
+[ext_resource path="res://font/SPACE.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[node name="Conta" type="Label"]
+margin_left = 464.0
+margin_top = 10.0
+margin_right = 504.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="retn" type="Sprite" parent="."]
+position = Vector2( 49.3735, 10.1428 )
+scale = Vector2( 0.3, 0.2 )
+texture = ExtResource( 1 )
