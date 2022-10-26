@@ -1,0 +1,226 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scripts/Jogo.gd" type="Script" id=1]
+[ext_resource path="res://Cenas/Estrelas.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fontes/Righteous.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Texturas/Asteroide.png" type="Texture" id=4]
+[ext_resource path="res://Texturas/Nave.png" type="Texture" id=5]
+[ext_resource path="res://Cenas/Nave.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Cenas/Transicao.tscn" type="PackedScene" id=7]
+
+[sub_resource type="Animation" id=7]
+resource_name = "Clarear"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("Escurecer:material:shader_param/Diametro")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Escurecer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Normal"
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Escurecer:material:shader_param/Diametro")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Escurecer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 2
+border_width_top = 3
+border_width_right = 2
+border_width_bottom = 3
+border_color = Color( 1, 1, 1, 1 )
+corner_detail = 20
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 1
+border_width_bottom = 3
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 1, 1, 1 )
+
+[node name="Espaco" type="ColorRect"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 0.107283
+margin_bottom = 0.1073
+mouse_filter = 1
+mouse_default_cursor_shape = 3
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Animacao" type="AnimationPlayer" parent="."]
+anims/Clarear = SubResource( 7 )
+anims/Normal = SubResource( 8 )
+anims/RESET = SubResource( 9 )
+
+[node name="Estrelas" parent="." instance=ExtResource( 2 )]
+
+[node name="Nave" parent="." instance=ExtResource( 6 )]
+position = Vector2( 640, 447.893 )
+rotation = -1.5708
+scale = Vector2( 0.1, 0.1 )
+
+[node name="GerarAsteroide" type="Timer" parent="."]
+
+[node name="Conta" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -128.0
+margin_top = -1.37165e-05
+margin_right = 128.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
+text = "4 + 4 = ?"
+align = 1
+valign = 1
+
+[node name="Pontos" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -192.0
+margin_right = -128.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 3 )
+text = "88"
+align = 1
+valign = 1
+
+[node name="Fundo" type="Label" parent="Pontos"]
+show_behind_parent = true
+margin_right = 64.0
+margin_bottom = 64.0
+custom_styles/normal = SubResource( 4 )
+
+[node name="Imagem" type="TextureRect" parent="Pontos"]
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 7.89272
+margin_right = -8.0
+margin_bottom = -8.10728
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Vida" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 136.0
+margin_top = -0.107283
+margin_right = 216.0
+margin_bottom = 63.8927
+custom_fonts/font = SubResource( 6 )
+align = 1
+valign = 1
+
+[node name="1" type="TextureRect" parent="Vida"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -48.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="2" type="TextureRect" parent="Vida"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_right = -8.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="3" type="TextureRect" parent="Vida"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 80.0
+margin_right = 32.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Fundo" type="Label" parent="Vida"]
+show_behind_parent = true
+margin_left = -8.0
+margin_right = 120.0
+margin_bottom = 64.0
+custom_styles/normal = SubResource( 5 )
+
+[node name="Escurecer" parent="." instance=ExtResource( 7 )]
+visible = false
+
+[connection signal="timeout" from="GerarAsteroide" to="." method="GerarAsteroide"]
