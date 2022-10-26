@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://som/musica.wav" type="AudioStream" id=1]
+[ext_resource path="res://cenas/AsteC.tscn" type="PackedScene" id=2]
+[ext_resource path="res://cenas/Nave.tscn" type="PackedScene" id=3]
+[ext_resource path="res://cenas/Jogo.gd" type="Script" id=4]
+[ext_resource path="res://cenas/Aste.tscn" type="PackedScene" id=5]
+
+[sub_resource type="ParticlesMaterial" id=5]
+emission_shape = 2
+emission_box_extents = Vector3( 400, 600, 1 )
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+
+[node name="Jogo" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Pontos" type="Label" parent="."]
+margin_left = 32.0
+margin_top = 6.4
+margin_right = 48.0
+margin_bottom = 29.4
+rect_scale = Vector2( 1, 1.0043 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Conta" type="Label" parent="."]
+margin_left = 456.0
+margin_top = 7.08011
+margin_right = 672.0
+margin_bottom = 48.0801
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Vida" type="Label" parent="."]
+margin_left = 991.918
+margin_top = -0.108817
+margin_right = 1011.92
+margin_bottom = 22.8912
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Erro" type="Label" parent="."]
+margin_left = 458.27
+margin_top = 547.16
+margin_right = 621.27
+margin_bottom = 587.16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="Nave" parent="." instance=ExtResource( 3 )]
+position = Vector2( -93.2757, 30.6895 )
+scale = Vector2( 1, 1 )
+z_index = 0
+z_as_relative = false
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( 459.666, 275.15 )
+rotation = -1.5708
+amount = 200
+process_material = SubResource( 5 )
+
+[node name="Aste" parent="." instance=ExtResource( 5 )]
+position = Vector2( 89.9935, 382.213 )
+
+[node name="Aste2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 210.247, 515.828 )
+
+[node name="AsteC" parent="." instance=ExtResource( 2 )]
+position = Vector2( 816.523, 524.179 )
+
+[node name="AsteC2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 965.169, 403.925 )
