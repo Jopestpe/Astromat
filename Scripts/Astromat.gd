@@ -31,5 +31,3 @@ func Configuracao():
 		$Animacao.play("Fechar_Configuracoes")
 	else:
 		$Animacao.play("Abrir_Configuracoes")
-	for i in p :
-		print("sasa")
