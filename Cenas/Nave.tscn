@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/Nave.gd" type="Script" id=1]
+[ext_resource path="res://SVGs/nave.svg" type="Texture" id=2]
+
+[node name="Nave" type="KinematicBody2D" groups=["Nave"]]
+z_index = 1
+script = ExtResource( 1 )
+
+[node name="Imagem" type="Sprite" parent="."]
+rotation = 1.5708
+texture = ExtResource( 2 )
+
+[node name="Colisor" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+build_mode = 1
+polygon = PoolVector2Array( 0, 155, 90, 190, 0, -190, -90, 190 )
+
+[node name="Recarregar" type="Timer" parent="."]
+wait_time = 0.5
+
+[connection signal="timeout" from="Recarregar" to="." method="Recarregado"]
