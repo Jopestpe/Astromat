@@ -15,10 +15,18 @@ _global_script_class_icons={
 [application]
 
 config/name="Astromat"
-config/description="Astromat em Dev
-Criado por Jopestpe"
+config/description="Astromat
+Desenvolvido por Jopestpe"
 run/main_scene="res://Cenas/Inicial.tscn"
-config/icon="res://Texturas/Icone.png"
+boot_splash/show_image=false
+boot_splash/fullsize=false
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
+config/icon="res://SVGs/icone.svg"
+
+[audio]
+
+default_bus_layout=""
 
 [autoload]
 
@@ -28,8 +36,14 @@ Global="*res://Scripts/Global.gd"
 
 window/size/width=1280
 window/size/height=720
+window/vsync/use_vsync=false
+window/handheld/orientation="portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[global]
+
+langu=false
 
 [input]
 
@@ -124,8 +138,12 @@ DISPARAR={
 
 [locale]
 
-fallback="pt_BR"
+test="es_ES"
+translations=PoolStringArray( "res://Localizacao/Astromat_Localizacao.en_US.translation", "res://Localizacao/Astromat_Localizacao.es.translation", "res://Localizacao/Astromat_Localizacao.pt_BR.translation" )
+locale_filter=[ 0, [  ] ]
 
 [rendering]
 
 quality/driver/driver_name="GLES2"
+environment/default_clear_color=Color( 0, 0, 0, 1 )
+environment/default_environment="res://Outros/Ambiente.tres"

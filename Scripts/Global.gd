@@ -1,13 +1,17 @@
 extends Node
 
-var Resposta
-	
-func Acertou_A_Resposta():
-	get_parent().get_node("Espaco").Pontuou()
-	get_parent().get_node("Espaco").Conta()
-	
-func Errou_A_Resposta():
-	get_parent().get_node("Espaco").Bateu()
+var Luz = false
+var Toque = false
+var TocarMusica = false
+var audio = AudioServer.get_bus_index("Master")
 
-func Nave_Colidiu_Asteroide():
-	get_parent().get_node("Espaco").Bateu()
+func _ready():
+	Configuracoes_Iniciais()
+	
+func Configuracoes_Iniciais():
+	AudioServer.set_bus_mute(audio,true)
+	TranslationServer.set_locale("en_US")
+	if OS.has_touchscreen_ui_hint():
+		Toque = true
+		
+

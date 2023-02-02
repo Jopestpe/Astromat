@@ -12,3 +12,6 @@
 * Idioma 🌐
 * Jogar Novamente 🔁 
 * Voltar ↩️
+
+## 
+* Primeiramente nomeado de Astemat(ASTEroide MATematica).

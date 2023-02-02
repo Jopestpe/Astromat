@@ -5,17 +5,15 @@
         <meta charset="UTF-8">
     </head>
     <style type='text/css'>
-        /* @font-face {
-            font-family: "Fonte1";
-            src: url("Fonte1.ttf");
-        } */
+         @font-face {
+            font-family: "fonte";
+            src: url("Outros/ff_astromat.ttf");
+        }
         body{
             background: #000000;
-            /* background: #4098F5; */
-            /* background: linear-gradient(90deg, #71D5FC 0%, #0071E3 100%); */
         }
         span{
-            /* font-family: "Fonte1"; */
+            font-family: "fonte";
             font-size: 15vh;
             color: white;
             margin: 0;
@@ -33,7 +31,7 @@
         <div id="d" >
             <span id="p">100%</span>
         </div>
-        <script>  
+        <script>
             var num = 0
             var engine = new Engine($GODOT_CONFIG);
             function printProgress(current, total) {
