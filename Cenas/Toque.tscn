@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Toque.gd" type="Script" id=1]
+[ext_resource path="res://SVGs/Voltar.svg" type="Texture" id=2]
+[ext_resource path="res://SVGs/Circulo.svg" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 128.0
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 72.0
+margin_bottom = 72.0
+mouse_default_cursor_shape = 2
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 136, 576 )
+script = ExtResource( 1 )
+
+[node name="Circulo_Grande" type="Sprite" parent="Area2D"]
+scale = Vector2( 0.57, 0.57 )
+texture = ExtResource( 3 )
+
+[node name="Circulo_Pequeno" type="Sprite" parent="Area2D"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 2 )
+
+[node name="Disparar" type="TextureButton" parent="."]
+margin_left = 1072.0
+margin_top = 512.0
+margin_right = 1272.0
+margin_bottom = 712.0
+rect_pivot_offset = Vector2( 100, 100 )
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 3 )
+expand = true
+
+[connection signal="gui_input" from="TextureRect" to="Area2D" method="_on_TextureRect_gui_input"]
+[connection signal="button_down" from="Disparar" to="Area2D" method="_on_Disparar_button_down"]
+[connection signal="button_up" from="Disparar" to="Area2D" method="_on_Disparar_button_up"]
