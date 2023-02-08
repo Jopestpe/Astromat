@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Krita: https://krita.org -->
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:krita="http://krita.org/namespaces/svg/krita"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    width="92.16pt"
+    height="92.16pt"
+    viewBox="0 0 92.16 92.16">
+<defs/>
+<path id="shape0" transform="matrix(0.707106360299045 0.707106360299045 -0.707106360299045 0.707106360299045 46.0799853518259 -2.79592058262764)" sodipodi:type="arc" sodipodi:rx="34.56" sodipodi:ry="34.56" sodipodi:cx="34.5610101875788" sodipodi:cy="34.56" sodipodi:start="6.28318530717959" sodipodi:end="4.7123890772252" sodipodi:open="true" d="M34.561 1.63425e-13C20.5828 -1.35366e-06 7.98097 8.42027 2.63173 21.3345C-2.7175 34.2486 0.239308 49.1135 10.1234 58.9976C20.0075 68.8817 34.8724 71.8385 47.7865 66.4893C60.7007 61.14 69.121 48.5382 69.121 34.56" fill="none" stroke="#ffffff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,17 @@
+# Astromat 
+
+* Asteroids
+* Tuxmath 
+
+## Padrões em ícones 
+
+* Jogar ▶️
+* Info ℹ️  
+* Configurações ⚙️
+* Tutorial ❔
+* Idioma 🌐
+* Jogar Novamente 🔁 
+* Voltar ↩️
+
+## 
+* Primeiramente nomeado de Astemat(ASTEroide MATematica).

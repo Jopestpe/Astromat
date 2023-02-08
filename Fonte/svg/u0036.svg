@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created using Krita: https://krita.org -->
+
+<svg
+   width="92.16pt"
+   height="92.16pt"
+   viewBox="0 0 92.16 92.16"
+   version="1.1"
+   id="svg13"
+   sodipodi:docname="u0036.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview15"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="pt"
+     showgrid="false"
+     inkscape:zoom="6.746419"
+     inkscape:cx="61.365889"
+     inkscape:cy="61.514116"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg13" />
+  <defs
+     id="defs9" />
+  <path
+     id="shape0"
+     style="color:#000000;fill:#ffffff;stroke-linecap:square;stroke-linejoin:bevel;-inkscape-stroke:none"
+     d="M 23.386078 -25.110529 A 1.8 1.8 0 0 0 22.117232 -24.565607 C 10.21988 -12.353438 -2.266049 7.1880758 -1.8003524 23.038928 C -1.7997964 23.057853 -1.8009453 23.077143 -1.8003524 23.096057 A 1.8 1.8 0 0 0 -1.7986515 23.103382 C -1.7630184 36.786557 9.5445997 47.881236 23.40819 47.881236 C 37.293676 47.881236 48.616732 36.751886 48.616732 23.038928 C 48.616732 9.3259725 37.293676 -1.8004495 23.40819 -1.8004495 C 16.786561 -1.8004495 10.750986 0.73303662 6.2447461 4.8675253 C 10.668582 -4.9629628 17.77007 -14.94418 24.697447 -22.054862 A 1.8 1.8 0 0 0 24.66513 -24.599298 A 1.8 1.8 0 0 0 23.386078 -25.110529 z M 23.40819 1.8001397 C 35.378703 1.8001398 45.015998 11.30265 45.015998 23.038928 C 45.015998 34.775208 35.378703 44.279182 23.40819 44.279182 C 11.437677 44.279182 1.800382 34.775208 1.8003819 23.038928 C 1.800382 11.30265 11.437677 1.8001397 23.40819 1.8001397 z "
+     transform="matrix(0.861233827626523 0 0 0.999999092201081 25.925524385672 34.6949791468614)" />
+</svg>

@@ -1,0 +1,16 @@
+
+
+No inkscape
+
+0 pip install index
+1
+
+
+
+No fontforge
+
+0
+1 import SVGs da pasta /svg/ como svg template 
+2 elecionar todos os caracters editados e dar auto width
+3 transform y -100
+4 criar fonte
