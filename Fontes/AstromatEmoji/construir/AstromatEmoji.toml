@@ -1,0 +1,33 @@
+family = "AstromatEmoji"
+output_file = "AstromatEmoji.ttf"
+color_format = "glyf_colr_0"
+upem = 1024
+width = 512
+ascender = 1024
+descender = -250
+linegap = 0
+transform = "translate(0, 0)"
+version_major = 1
+version_minor = 0
+reuse_tolerance = 0.1
+ignore_reuse_error = true
+keep_glyph_names = false
+clip_to_viewbox = true
+pretty_print = false
+fea_file = "features.fea"
+glyphmap_generator = "nanoemoji.write_glyphmap"
+bitmap_resolution = 128
+use_zopflipng = true
+use_pngquant = true
+pngquant_flags = "--speed 1 --skip-if-larger --quality 85-95"
+
+[axis.wght]
+name = "Weight"
+default = 400
+
+[master.regular]
+style_name = "Regular"
+srcs = [ "picosvg/clipped/emoji_u1f310.svg", "picosvg/clipped/emoji_u1f39a.svg", "picosvg/clipped/emoji_u1f5b1.svg", "picosvg/clipped/emoji_u2139.svg", "picosvg/clipped/emoji_u2754.svg",]
+
+[master.regular.position]
+wght = 400
