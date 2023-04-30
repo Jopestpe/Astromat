@@ -10,7 +10,7 @@
 ```
 
 ## Sobre font
-```console
+```text
 ℹDetalhes
 emoji_u2139
 🎚Definir
