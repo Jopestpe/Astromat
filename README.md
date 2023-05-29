@@ -1,6 +1,14 @@
 # Astromat 0.1.0
 
 * ⚠️ Problema com SharedArrayBuffer no Godot 4 para Web 
+* Repo de verificar versão excluído.
+```gdscript
+var _PedidoErro = Pedido.request("https://gitlab.com/jopestpe/V/-/raw/main/Astromat.txt")
+	if OS.has_feature("SharedArrayBuffer"):
+		print("SharedArrayBuffer is supported")
+	else:
+		print("SharedArrayBuffer is not supported")
+```console 
 
 * Godot 3 para Godot 4
 * Refeito do 0
