@@ -1,4 +1,4 @@
 # Ignorar tudo exeto /site
 /*
 !vercel.json
-!/site
+!site
