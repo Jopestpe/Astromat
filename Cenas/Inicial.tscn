@@ -1,0 +1,651 @@
+[gd_scene load_steps=29 format=3 uid="uid://dto33ouylkfxi"]
+
+[ext_resource type="Theme" uid="uid://0cjs5w3dp41y" path="res://Outros/Tema.tres" id="1_5p8ju"]
+[ext_resource type="Texture2D" uid="uid://dvinfaln36pau" path="res://Svgs/Estrela.svg" id="1_iifdi"]
+[ext_resource type="Script" path="res://Scripts/Inicial.gd" id="2_gs6vb"]
+[ext_resource type="AudioStream" uid="uid://hetpg43f4gh6" path="res://Audios/Musica.wav" id="3_7b1qg"]
+[ext_resource type="AudioStream" uid="uid://s71wwbd4d2nv" path="res://Audios/Disparo.wav" id="4_0yy54"]
+[ext_resource type="Texture2D" uid="uid://ckrdyshnbhi8c" path="res://Svgs/Ajuestes.svg" id="4_s60t0"]
+[ext_resource type="Texture2D" uid="uid://ddqlg3r2740j2" path="res://Svgs/Jogar.svg" id="6_1sdbu"]
+[ext_resource type="FontFile" uid="uid://bymwb53hn8unq" path="res://Outros/Astromat010.ttf" id="6_x7l8l"]
+[ext_resource type="Material" uid="uid://crspllntu7e8e" path="res://Outros/Transicao.tres" id="7_wpm08"]
+[ext_resource type="FontFile" uid="uid://dtuyfgikcqtmv" path="res://Fontes/AstromatEmoji.ttf" id="8_smyyp"]
+[ext_resource type="Texture2D" uid="uid://c5e8tvihjipo0" path="res://Svgs/Expandir.svg" id="9_w3d5f"]
+
+[sub_resource type="Gradient" id="Gradient_5muw1"]
+offsets = PackedFloat32Array(0, 0.202346, 0.780059, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1, 0.968326, 0.968326, 0.968326, 1, 1, 1, 1, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ste2"]
+font = ExtResource("6_x7l8l")
+font_size = 110
+outline_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_w06o1"]
+font = ExtResource("6_x7l8l")
+font_size = 46
+outline_size = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_dxoh4"]
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_37637"]
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_5wa2y"]
+font_size = 36
+
+[sub_resource type="LabelSettings" id="LabelSettings_5xxsn"]
+font = ExtResource("8_smyyp")
+font_size = 64
+
+[sub_resource type="Animation" id="Animation_knr5b"]
+resource_name = "AbrirAjustes"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ajustes:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -3.14159, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AbasDeAjustes:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1600, -0.25, 0, 0.25, 0, 1216, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_16d52"]
+resource_name = "AbrirTela"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transicao:material:shader_parameter/Diametro")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transicao:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_egmwo"]
+resource_name = "EmCimaAjustes"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ajustes:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.8, -0.25, 0, 0.25, 0, 1.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ajustes:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.8, -0.25, 0, 0.25, 0, 1.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_0tnmr"]
+resource_name = "EmCimaJogar"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Jogar:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.8, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Jogar:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.8, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_hab6g"]
+resource_name = "FecharAjustes"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ajustes:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -3.14159, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AbasDeAjustes:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1216, -0.25, 0, 0.25, 0, 1600, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_ow0ij"]
+resource_name = "IrParaJogo"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Transicao:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Transicao:material:shader_parameter/Diametro")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"TrocarParaJogo"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ysj1h"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_263nc"]
+resource_name = "SaiuAjustes"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ajustes:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.1, -0.25, 0, 0.25, 0, 0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ajustes:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.1, -0.25, 0, 0.25, 0, 0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_3a5qw"]
+resource_name = "SaiuJogar"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Jogar:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Jogar:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cgoln"]
+_data = {
+"AbrirAjustes": SubResource("Animation_knr5b"),
+"AbrirTela": SubResource("Animation_16d52"),
+"EmCimaAjustes": SubResource("Animation_egmwo"),
+"EmCimaJogar": SubResource("Animation_0tnmr"),
+"FecharAjustes": SubResource("Animation_hab6g"),
+"IrParaJogo": SubResource("Animation_ow0ij"),
+"RESET": SubResource("Animation_ysj1h"),
+"SaiuAjustes": SubResource("Animation_263nc"),
+"SaiuJogar": SubResource("Animation_3a5qw")
+}
+
+[node name="Inicio" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5p8ju")
+script = ExtResource("2_gs6vb")
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("3_7b1qg")
+
+[node name="TesteVolume" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_0yy54")
+
+[node name="Fundo" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Estrelas" type="CPUParticles2D" parent="."]
+position = Vector2(800, 500)
+amount = 100
+lifetime = 3.0
+texture = ExtResource("1_iifdi")
+emission_shape = 3
+emission_rect_extents = Vector2(900, 550)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+angular_velocity_min = 100.0
+angular_velocity_max = 100.0
+scale_amount_min = 0.03
+scale_amount_max = 0.03
+color_ramp = SubResource("Gradient_5muw1")
+
+[node name="Nome" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.222222
+anchor_right = 1.0
+anchor_bottom = 0.426667
+grow_horizontal = 2
+text = "Astromat"
+label_settings = SubResource("LabelSettings_0ste2")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Versao" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.015
+anchor_top = 0.853333
+anchor_right = 0.1
+anchor_bottom = 0.977778
+grow_vertical = 0
+text = "0.1.0"
+label_settings = SubResource("LabelSettings_w06o1")
+vertical_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Ajustes" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.99
+anchor_top = 0.986667
+anchor_right = 0.99
+anchor_bottom = 0.986667
+offset_left = -88.0
+offset_top = -88.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(44, 44)
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("4_s60t0")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Jogar" type="TextureButton" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.46
+anchor_top = 0.497778
+anchor_right = 0.54
+anchor_bottom = 0.64
+offset_right = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(64, 64)
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("6_1sdbu")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Expandir" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.99
+anchor_top = 0.0177778
+anchor_right = 0.99
+anchor_bottom = 0.0177778
+offset_left = -64.0
+offset_bottom = 64.0
+grow_horizontal = 0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+toggle_mode = true
+texture_normal = ExtResource("9_w3d5f")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="AbasDeAjustes" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.72
+anchor_top = 0.5
+anchor_right = 1.735
+anchor_bottom = 0.5
+offset_left = -1152.0
+offset_top = -258.0
+offset_right = -768.0
+offset_bottom = 318.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="🌐" type="TabBar" parent="AbasDeAjustes"]
+layout_mode = 2
+tab_alignment = 1
+
+[node name="Idiomas" type="ItemList" parent="AbasDeAjustes/🌐"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+item_count = 3
+item_0/text = "English"
+item_1/text = "Español"
+item_2/text = "Português"
+
+[node name="🎚️" type="TabBar" parent="AbasDeAjustes"]
+visible = false
+layout_mode = 2
+tab_alignment = 1
+
+[node name="Volume" type="Label" parent="AbasDeAjustes/🎚️"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 74.0
+offset_right = 317.0
+offset_bottom = 138.0
+text = "VOLUME"
+label_settings = SubResource("LabelSettings_dxoh4")
+autowrap_mode = 2
+clip_text = true
+
+[node name="AlterarVolume" type="HSlider" parent="AbasDeAjustes/🎚️"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 61.0
+offset_top = 138.0
+offset_right = 317.0
+offset_bottom = 202.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+max_value = 10.0
+value = 5.0
+
+[node name="AtualizarSelecionar" type="ColorRect" parent="AbasDeAjustes/🎚️"]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 239.0
+offset_bottom = -157.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Atualizar" type="Label" parent="AbasDeAjustes/🎚️"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 61.0
+offset_top = 264.0
+offset_right = 359.0
+offset_bottom = 400.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+text = "ATUALIZAR"
+label_settings = SubResource("LabelSettings_37637")
+autowrap_mode = 2
+
+[node name="❔" type="TabBar" parent="AbasDeAjustes"]
+visible = false
+layout_mode = 2
+tab_alignment = 1
+
+[node name="Movimento" type="Label" parent="AbasDeAjustes/❔"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 51.0
+offset_right = 317.0
+offset_bottom = 115.0
+text = "Mover"
+label_settings = SubResource("LabelSettings_5wa2y")
+vertical_alignment = 2
+
+[node name="wasd2" type="Label" parent="AbasDeAjustes/❔"]
+layout_mode = 1
+offset_left = 125.0
+offset_top = 115.0
+offset_right = 253.0
+offset_bottom = 243.0
+text = "w
+A S D"
+label_settings = SubResource("LabelSettings_5wa2y")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mirar" type="Label" parent="AbasDeAjustes/❔"]
+layout_mode = 0
+offset_left = 61.0
+offset_top = 243.0
+offset_right = 381.0
+offset_bottom = 307.0
+text = "Mirar"
+label_settings = SubResource("LabelSettings_5wa2y")
+vertical_alignment = 2
+
+[node name="Mouse" type="Label" parent="AbasDeAjustes/❔"]
+layout_mode = 0
+offset_left = 125.0
+offset_top = 307.0
+offset_right = 253.0
+offset_bottom = 435.0
+text = "🖱️"
+label_settings = SubResource("LabelSettings_5xxsn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ℹ️" type="TabBar" parent="AbasDeAjustes"]
+visible = false
+layout_mode = 2
+tab_alignment = 1
+
+[node name="CriadorSelecionar" type="ColorRect" parent="AbasDeAjustes/ℹ️"]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 48.0
+offset_bottom = -245.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Criador" type="Label" parent="AbasDeAjustes/ℹ️"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 61.0
+offset_top = 74.0
+offset_right = 359.0
+offset_bottom = 208.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+text = "CRIADO"
+label_settings = SubResource("LabelSettings_37637")
+autowrap_mode = 2
+
+[node name="MotorSelecionar" type="ColorRect" parent="AbasDeAjustes/ℹ️"]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 239.0
+offset_bottom = -53.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Motor" type="Label" parent="AbasDeAjustes/ℹ️"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 61.0
+offset_top = 264.0
+offset_right = 359.0
+offset_bottom = 400.0
+mouse_filter = 1
+mouse_default_cursor_shape = 2
+text = "FEITO"
+label_settings = SubResource("LabelSettings_37637")
+autowrap_mode = 2
+
+[node name="Transicao" type="ColorRect" parent="."]
+visible = false
+self_modulate = Color(0, 0, 0, 1)
+material = ExtResource("7_wpm08")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Animar" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_cgoln")
+}
+
+[node name="AnimarIr" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_cgoln")
+}
+
+[node name="AnimarAjustes" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_cgoln")
+}
+
+[node name="tocar_musica" type="Timer" parent="."]
+wait_time = 10.0
+
+[connection signal="mouse_entered" from="Ajustes" to="." method="EmCimaAJuste"]
+[connection signal="mouse_exited" from="Ajustes" to="." method="SaiuCimaAjuste"]
+[connection signal="toggled" from="Ajustes" to="." method="Ajustes"]
+[connection signal="button_down" from="Jogar" to="." method="JogarApertado"]
+[connection signal="mouse_entered" from="Jogar" to="." method="EmCimaJogar"]
+[connection signal="mouse_exited" from="Jogar" to="." method="SaiuJogar"]
+[connection signal="toggled" from="Expandir" to="." method="Expandir"]
+[connection signal="item_selected" from="AbasDeAjustes/🌐/Idiomas" to="." method="IdiomaSelecionado"]
+[connection signal="value_changed" from="AbasDeAjustes/🎚️/AlterarVolume" to="." method="AlterarVolume"]
+[connection signal="gui_input" from="AbasDeAjustes/🎚️/Atualizar" to="." method="Atualizar"]
+[connection signal="mouse_entered" from="AbasDeAjustes/🎚️/Atualizar" to="." method="AtualizarEntrou"]
+[connection signal="mouse_exited" from="AbasDeAjustes/🎚️/Atualizar" to="." method="AtualizarSaiu"]
+[connection signal="gui_input" from="AbasDeAjustes/ℹ️/Criador" to="." method="Criador"]
+[connection signal="mouse_entered" from="AbasDeAjustes/ℹ️/Criador" to="." method="EmCimaCriador"]
+[connection signal="mouse_exited" from="AbasDeAjustes/ℹ️/Criador" to="." method="SaiuCriador"]
+[connection signal="gui_input" from="AbasDeAjustes/ℹ️/Motor" to="." method="Motor"]
+[connection signal="mouse_entered" from="AbasDeAjustes/ℹ️/Motor" to="." method="EmCimaMotor"]
+[connection signal="mouse_exited" from="AbasDeAjustes/ℹ️/Motor" to="." method="SaiuMotor"]
+[connection signal="timeout" from="tocar_musica" to="." method="tocar_musica"]

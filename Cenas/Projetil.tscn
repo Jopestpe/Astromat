@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw4jyur62bfdp"]
+
+[ext_resource type="Script" path="res://Scripts/Projetil.gd" id="1_d8jlc"]
+[ext_resource type="Texture2D" uid="uid://b5glrwbe10t62" path="res://Svgs/Projetil.svg" id="1_resnq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_waaie"]
+size = Vector2(20, 146.988)
+
+[node name="Projetil" type="RigidBody2D" groups=["Projetil"]]
+z_index = 3
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+script = ExtResource("1_d8jlc")
+
+[node name="Imagem" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.117, 0.117)
+texture = ExtResource("1_resnq")
+
+[node name="Colisor" type="CollisionShape2D" parent="."]
+position = Vector2(-2.38419e-07, 1.7053e-13)
+rotation = 1.5708
+scale = Vector2(0.2, -0.326558)
+shape = SubResource("RectangleShape2D_waaie")
+
+[node name="Visivel" type="VisibleOnScreenNotifier2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.4, 2.4)
+
+[connection signal="screen_exited" from="Visivel" to="." method="ProjetilSaiuDaTela"]

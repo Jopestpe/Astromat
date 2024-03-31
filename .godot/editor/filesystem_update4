@@ -1,0 +1,4 @@
+res://Cenas/Inicial.tscn
+res://Outros/Tema.tres
+res://Outros/Transicao.tres
+res://Scripts/Inicial.gd
