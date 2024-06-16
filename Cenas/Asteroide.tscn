@@ -1,0 +1,197 @@
+[gd_scene load_steps=9 format=3 uid="uid://cn7yineoy2yoq"]
+
+[ext_resource type="Script" path="res://Scripts/Asteroide.gd" id="1_ee4st"]
+[ext_resource type="Texture2D" uid="uid://cmbr06tmo5smn" path="res://Svgs/Asteroide.svg" id="2_rlk2f"]
+[ext_resource type="Texture2D" uid="uid://c0ngsmk177edv" path="res://Svgs/Parte.svg" id="3_o5mk6"]
+[ext_resource type="AudioStream" uid="uid://bldtny15hnbyw" path="res://Audios/Explosao.wav" id="4_1tylp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xh886"]
+font_size = 44
+
+[sub_resource type="Animation" id="Animation_8ft17"]
+resource_name = "QuebrarAsteroide"
+length = 10.0
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(10.1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Imagem:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Numero:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Colisor:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ysvp4"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("%Imagem:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Numero:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Colisor:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_476bc"]
+_data = {
+"QuebrarAsteroide": SubResource("Animation_8ft17"),
+"RESET": SubResource("Animation_ysvp4")
+}
+
+[node name="Asteroide" type="Area2D" groups=["Asteroide"]]
+z_index = 5
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ee4st")
+
+[node name="Visivel" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-4.76837e-07, 3.8147e-06)
+scale = Vector2(8, 8)
+
+[node name="Colisor" type="CollisionPolygon2D" parent="."]
+scale = Vector2(0.7, 0.7)
+polygon = PackedVector2Array(0, -72, 64, -40, 64, 40, 0, 72, -64, 40, -64, -40)
+
+[node name="Imagem" type="Sprite2D" parent="Colisor"]
+unique_name_in_owner = true
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_rlk2f")
+
+[node name="Numero" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+text = "999"
+label_settings = SubResource("LabelSettings_xh886")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Animar" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../Quebrar")
+libraries = {
+"": SubResource("AnimationLibrary_476bc")
+}
+
+[node name="Quebrar" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 4
+lifetime = 10.0
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("3_o5mk6")
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 200.0
+initial_velocity_max = 200.0
+angular_velocity_min = 100.0
+angular_velocity_max = 100.0
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 0.25
+scale_amount_max = 0.25
+
+[node name="Explosao" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("4_1tylp")
+
+[connection signal="body_entered" from="." to="." method="AsteroideColidiuComCorpo"]
+[connection signal="screen_exited" from="Visivel" to="." method="AsteroideSaiuDaTela"]
