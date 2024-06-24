@@ -1,0 +1,15 @@
+Camera2D
+ColorRect
+Timer
+Node2D
+TextureButton
+Label
+HSlider
+AudioStreamPlayer
+TextureRect
+Control
+AnimationPlayer
+TabBar
+CPUParticles2D
+VisibleOnScreenNotifier2D
+Sprite2D
