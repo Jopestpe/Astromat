@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://s7ctfuy1regq"
+
+[deps]
+
+files=["res://Outros/Traduzir.pt_BR.translation", "res://Outros/Traduzir.en_US.translation", "res://Outros/Traduzir.es.translation"]
+
+source_file="res://Outros/Traduzir.csv"
+dest_files=["res://Outros/Traduzir.pt_BR.translation", "res://Outros/Traduzir.en_US.translation", "res://Outros/Traduzir.es.translation"]
+
+[params]
+
+compress=true
+delimiter=0
