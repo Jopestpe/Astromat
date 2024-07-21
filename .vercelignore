@@ -1,5 +1,0 @@
-# Ignorar tudo exeto /web
-/*
-!web/
-!web
-!vercel.json
