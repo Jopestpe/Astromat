@@ -1,3 +1,11 @@
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js')
+    .then(() => {
+      console.log("Service worker registrado!");
+      location.reload();
+    })
+    .catch((error) => console.error("Falha ao registrar Service worker:", error));
+}
 
 var Godot = (() => {
   var _scriptDir = typeof document !== 'undefined' && document.currentScript ? document.currentScript.src : undefined;
