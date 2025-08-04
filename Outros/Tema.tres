@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=22 format=3 uid="uid://0cjs5w3dp41y"]
+[gd_resource type="Theme" load_steps=21 format=3 uid="uid://0cjs5w3dp41y"]
 
 [ext_resource type="Texture2D" uid="uid://42w4uo4bg0ra" path="res://Svgs/Vazio.svg" id="1_bebku"]
 [ext_resource type="FontFile" uid="uid://dtuyfgikcqtmv" path="res://Fontes/AstromatEmoji.ttf" id="2_g5l0f"]
@@ -24,13 +24,17 @@ border_color = Color(1, 1, 1, 1)
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_riogl"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dvwvp"]
+bg_color = Color(1, 1, 1, 1)
+expand_margin_left = 100.0
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t48w1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2nts"]
+bg_color = Color(1, 1, 1, 1)
+expand_margin_left = 100.0
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uhdwv"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d87ri"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kw8b7"]
+bg_color = Color(1, 1, 1, 1)
+expand_margin_left = 100.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adclu"]
 content_margin_left = 59.0
@@ -131,15 +135,16 @@ HSlider/styles/grabber_area = SubResource("StyleBoxFlat_wvv45")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_q6xm5")
 HSlider/styles/slider = SubResource("StyleBoxFlat_gxdh7")
 ItemList/colors/font_color = Color(1, 1, 1, 1)
-ItemList/colors/font_outline_color = Color(1, 1, 1, 1)
+ItemList/colors/font_hovered_color = Color(0, 0, 0, 1)
+ItemList/colors/font_hovered_selected_color = Color(0, 0, 0, 1)
+ItemList/colors/font_outline_color = Color(0, 0, 0, 1)
 ItemList/colors/font_selected_color = Color(0, 0, 0, 1)
-ItemList/colors/guide_color = Color(0, 0, 0, 0)
+ItemList/colors/guide_color = Color(0, 0, 0, 1)
 ItemList/constants/v_separation = 30
 ItemList/font_sizes/font_size = 36
-ItemList/styles/cursor = SubResource("StyleBoxEmpty_riogl")
-ItemList/styles/cursor_unfocused = SubResource("StyleBoxEmpty_t48w1")
-ItemList/styles/focus = SubResource("StyleBoxEmpty_uhdwv")
-ItemList/styles/hovered = SubResource("StyleBoxEmpty_d87ri")
+ItemList/styles/hovered = SubResource("StyleBoxFlat_dvwvp")
+ItemList/styles/hovered_selected = SubResource("StyleBoxFlat_w2nts")
+ItemList/styles/hovered_selected_focus = SubResource("StyleBoxFlat_kw8b7")
 ItemList/styles/panel = SubResource("StyleBoxFlat_adclu")
 ItemList/styles/selected = SubResource("StyleBoxFlat_pihvx")
 ItemList/styles/selected_focus = SubResource("StyleBoxFlat_dk74r")

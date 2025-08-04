@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cro733q365gpa"]
 
-[ext_resource type="Script" path="res://Scripts/Nave.gd" id="1_qmbrg"]
+[ext_resource type="Script" uid="uid://3bayokqt4mmr" path="res://Scripts/Nave.gd" id="1_qmbrg"]
 [ext_resource type="Texture2D" uid="uid://cbag6b4t3tkpl" path="res://Svgs/Nave.svg" id="2_ljfbe"]
 [ext_resource type="AudioStream" uid="uid://s71wwbd4d2nv" path="res://Audios/Disparo.wav" id="3_yn31u"]
 [ext_resource type="AudioStream" uid="uid://bgriyb7bnhy0q" path="res://Audios/Batida.wav" id="4_pt5qm"]
@@ -81,9 +81,9 @@ resource_name = "new_animation"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3y74w"]
 _data = {
-"Destruir": SubResource("Animation_4cgpl"),
-"Estilhacar": SubResource("Animation_jjrlr"),
-"new_animation": SubResource("Animation_d2kf0")
+&"Destruir": SubResource("Animation_4cgpl"),
+&"Estilhacar": SubResource("Animation_jjrlr"),
+&"new_animation": SubResource("Animation_d2kf0")
 }
 
 [sub_resource type="Gradient" id="Gradient_cisgy"]

@@ -35,7 +35,7 @@ func Ajustes(Abrir):
 
 func Criador(event):
 	if (event is InputEventMouseButton && event.pressed && event.button_index == 1):
-		var _OS = OS.shell_open("https://twitter.com/Jopestpe") 
+		var _OS = OS.shell_open("https://github.com/Jopestpe") 
 
 func Motor(event):
 	if (event is InputEventMouseButton && event.pressed && event.button_index == 1):

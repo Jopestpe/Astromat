@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var Aleatorio = RandomNumberGenerator.new()
 @onready var Jogo = get_parent().get_parent()
+@onready var Label_Numero = $Numero
 var Certo
 var Numero
 var Dificuldade = 10
@@ -15,10 +16,11 @@ func _ready():
 	if Certo == 5:
 		Numero = Jogo.RespostaCerta
 	else:
-		Numero = Aleatorio.randi_range(
-			Jogo.RespostaCerta - Dificuldade,
-			Jogo.RespostaCerta + Dificuldade)
-	$Numero.text = str(Numero)
+		var min_val = int(Jogo.RespostaCerta) - Dificuldade
+		var max_val = int(Jogo.RespostaCerta) + Dificuldade
+		Numero = Aleatorio.randi_range(min_val, max_val)
+	Numero = int(Numero)
+	Label_Numero.text = str(Numero)
 
 func Definicoes(DefinirPosicao,DefinirDirecao,DefinirVelocidade):
 	global_position = DefinirPosicao
